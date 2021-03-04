@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="src/main.js" defer></script>
+  </head>
+  <body>
+    <div id="root" class="container">
+      <div class="timer text-center" id="timer">0</div>
+
+      <div class="cards-list"></div>
+    </div>
+
+    <div id="modal" class="b-modal container shadow">
+      <form id="form" class="form">
+        <input
+          type="text"
+          class="form-control mb-3"
+          placeholder="nickname"
+          id="nicknameInput"
+          required
+        />
+        <div class="mb-5 input">
+          <div class="input__feedback text-danger h3">
+            the number must be even and &lt; 10
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="how many pairs of cards?"
+            required
+            id="inputLength"
+          />
+        </div>
+        <button class="btn btn-danger start-btn" type="submit" id="startBtn">
+          START
+        </button>
+      </form>
+      <h1 class="text-danger status" id="status">YOU WIN</h1>
+    </div>
+
+    <button id="winnersTrigger" class="winners__trigger btn btn-primary">
+      WINNERS
+    </button>
+    <aside class="winners shadow" id="winners">
+      <div class="winners__table">
+        <table class="table" id="winnersTable">
+          <thead>
+            <tr>
+              <th scope="col">name</th>
+              <th scope="col">pairs</th>
+              <th scope="col">time</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </aside>
+  </body>
+</html>

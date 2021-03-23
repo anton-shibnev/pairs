@@ -1,5 +1,8 @@
 body {
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 #root {
@@ -8,9 +11,14 @@ body {
 }
 
 .cards-list {
+  display: -ms-grid;
   display: grid;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   grid-gap: 1vw;
 }
 
@@ -19,6 +27,8 @@ body {
   font-size: 10vw;
   font-weight: 700;
   opacity: 0;
+  -webkit-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
   transition: opacity 0.2s;
 }
 
@@ -27,27 +37,50 @@ body {
 }
 
 .top {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .card {
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100%;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.4s ease-in-out, -webkit-box-shadow 0.2s ease-in-out,
+    -webkit-filter 0.2s ease-in-out;
+  transition: opacity 0.2s, -webkit-transform 0.4s ease-in-out, -webkit-box-shadow 0.2s ease-in-out,
+    -webkit-filter 0.2s ease-in-out;
+  -o-transition: transform 0.4s ease-in-out, box-shadow 0.2s ease-in-out,
+    filter 0.2s ease-in-out, opacity 0.2s;
   transition: transform 0.4s ease-in-out, box-shadow 0.2s ease-in-out,
     filter 0.2s ease-in-out, opacity 0.2s;
-  perspective: 1000px;
-  transform-style: preserve-3d;
-  transform: rotateY(0);
+  transition: transform 0.4s ease-in-out, box-shadow 0.2s ease-in-out,
+    filter 0.2s ease-in-out, opacity 0.2s, -webkit-transform 0.4s ease-in-out, -webkit-box-shadow 0.2s ease-in-out,
+    -webkit-filter 0.2s ease-in-out;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
   border: none;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
   background-color: rgb(209, 209, 209);
 }
 
 .card:hover {
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .card::before {
@@ -56,19 +89,24 @@ body {
   position: absolute;
   width: 102%;
   height: 102%;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   background-color: #ff6f6f;
   border-radius: 0.25rem;
   z-index: 5;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .card--active {
-  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
   pointer-events: none;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .card--no-touch {
@@ -78,7 +116,9 @@ body {
 .card__title {
   font-size: 4vw;
   margin-bottom: 0;
-  transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+      -ms-transform: scale(-1, 1);
+          transform: scale(-1, 1);
   mix-blend-mode: difference;
   /* color: #fff; */
 }
@@ -104,6 +144,8 @@ body {
 
 .input__feedback {
   opacity: 0;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
 }
 
@@ -112,14 +154,20 @@ body {
 }
 
 .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 #form.disable {
   opacity: 0.5;
   cursor: not-allowed;
-  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
 }
 
 #form.disable > * {
@@ -133,8 +181,14 @@ body {
   bottom: 0;
   padding: 5rem 1rem 1rem 1rem;
   background-color: #fff;
-  transform: translate(120%);
+  -webkit-transform: translate(120%);
+      -ms-transform: translate(120%);
+          transform: translate(120%);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  -o-transition: transform 0.2s ease-in-out;
   transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
   height: 100vh;
 }
 
@@ -146,7 +200,9 @@ body {
 }
 
 .winners--active {
-  transform: translate(0);
+  -webkit-transform: translate(0);
+      -ms-transform: translate(0);
+          transform: translate(0);
 }
 
 .b-modal {
@@ -154,9 +210,17 @@ body {
   padding: 3rem;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+      -ms-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  -webkit-transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  -o-transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
   transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
-  transition-delay: 0.5s;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  -webkit-transition-delay: 0.5s;
+       -o-transition-delay: 0.5s;
+          transition-delay: 0.5s;
   border-radius: 0.5rem;
   background-color: #fff;
   opacity: 1;
@@ -164,7 +228,9 @@ body {
 }
 
 .b-modal--hide {
-  transform: translate(-50%, -50%) scale(0);
+  -webkit-transform: translate(-50%, -50%) scale(0);
+      -ms-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
   opacity: 0;
 }
 
@@ -172,6 +238,7 @@ body {
   width: 110px;
   white-space: nowrap;
   overflow: hidden !important;
-  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
   display: inline-block;
 }
